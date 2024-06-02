@@ -247,10 +247,16 @@ function flattenProjectFields(project) {
     "Status created by": escapeText(
       current_status_update?.created_by?.name || ""
     ),
-    "Status created at": current_status_update?.created_at || "",
-    "Start on": start_on || "",
-    "Due on": due_on || "",
+    "Status created at": formatDate(current_status_update?.created_at),
+    "Start on": formatDate(start_on),
+    "Due on": formatDate(due_on),
   };
+
+  function formatDate(date) {
+    if (!date) return "";
+    const formattedDate = new Date(date).toLocaleDateString();
+    return formattedDate;
+  }
 
   return newProject;
 }
