@@ -243,6 +243,7 @@ function flattenProjectFields(project) {
     Name: escapeText(name),
     Link: escapeText(`https://app.asana.com/0/${gid}/list`),
     "Status update": escapeText(current_status_update?.text || ""),
+    "Status type": current_status_update?.status_type || "",
     "Status color": getStatusColor(current_status_update),
     "Status created by": escapeText(
       current_status_update?.created_by?.name || ""
