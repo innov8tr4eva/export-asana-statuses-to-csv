@@ -1,5 +1,5 @@
 # Export Project Statuses to CSV
- 
+
 The Portfolio Status Updates application is used to extract [status updates](https://developers.asana.com/reference/status-updates) from [projects](https://developers.asana.com/reference/projects) in a nested [portfolio](https://developers.asana.com/reference/portfolios) structure in Asana. The resulting data is exported in CSV format.
 
 ![User interface](./images/appsample.png "Web page to capture user input and generate a CSV")
@@ -26,15 +26,16 @@ Then, to get started, open `./index.html` in your browser and provide your perso
 
 The standard information outputted in the resulting CSV file include the following project metadata:
 
-* Project ID (`gid`)
-* Project name (`name`)
-* Project link
-* Project start date (`start_on`)
-* Project due date (`due_on`)
-* Current status update (`current_status_update.text`)
-* Current status update color (interpreted from `current_status_update.status_type`)
-* Current status update author (`current_status_update.created_by.name`)
-* Current status update creation time (`current_status_update.created_at`)
+- Project ID (`gid`)
+- Project name (`name`)
+- Project link
+- Project start date (`start_on`)
+- Project due date (`due_on`)
+- Current status update (`current_status_update.text`)
+- Current status state (`current_status_update.status_type`)
+- Current status update color (interpreted from `current_status_update.status_type`)
+- Current status update author (`current_status_update.created_by.name`)
+- Current status update creation time (`current_status_update.created_at`)
 
 To get more information on a single project, you can request the complete project record by using its GID with the Asana API, as documented here: [GET /projects/{project_gid}](https://developers.asana.com/reference/getproject).
 
